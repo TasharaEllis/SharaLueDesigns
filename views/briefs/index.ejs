@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Start A Project</h1>
+             <p>what kind of design do you need?</p>
+             <a class="btn btn-primary btn-large" href="/briefs/new">Start Project!</a>
+         </div>
+     </header>
+     <div>
+        <% briefs.forEach(function(brief){ %>
+            <div>
+                <div class="panel panel-default">
+                   <div>
+                       <h4><%= brief.firstname %></h4>
+                       <h4><%= brief.lastname %></h4>
+                   </div>
+                   <p><a href="/briefs/<%= brief._id %>" class="btn btn-primary">More Info</a></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
